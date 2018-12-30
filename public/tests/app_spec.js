@@ -29,9 +29,9 @@ describe('LearnJS', function() {
   });
 
   describe('problem view', function() {
-    it('問題番号を含んだタイトルがある', function() {
+    it('問題番号を含んだタイトルを表示できる', function() {
       var view = learnjs.problemView('1');
-      expect(view.text()).toEqual('Problem #1 Coming soon!');
+      expect(view.find('.title').text()).toEqual('Problem #1');
     });
   });
 });

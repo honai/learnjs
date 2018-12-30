@@ -11,6 +11,7 @@
   <script src='/app.js'></script>
   <style type="text/css" media="all">
     body { margin-top: 30px; }
+    .template { display: none; }
   </style>
 </head>
 
@@ -29,9 +30,15 @@
         </div>
       </div>
     </div>
+
+    <div class="templates">
+      <div class="problem-view">
+        <h3 class="title"></h3>
+      </div>
+    </div>
   </div>
 <script>
-learnjs.appOnReady;
+$(learnjs.appOnReady);
 </script>
 </body>
 </html>
