@@ -47,10 +47,10 @@ describe('LearnJS', function() {
     });
 
     describe('answer section', function() {
-      it('正解の判定', function() {
+      it('正解で次の問題のリンクが出てくる', function() {
         view.find('.answer').val('true');
         view.find('.check-btn').click();
-        expect(view.find('.result').text()).toEqual('Correct!');
+        expect(view.find('.result a').attr('href')).toEqual('#problem-2');
       });
 
       it('不正解の判定', function() {
