@@ -29,9 +29,21 @@ describe('LearnJS', function() {
   });
 
   describe('problem view', function() {
+    var view;
+    beforeEach(function() {
+      view = learnjs.problemView('1');
+    });
+
     it('問題番号を含んだタイトルを表示できる', function() {
-      var view = learnjs.problemView('1');
       expect(view.find('.title').text()).toEqual('Problem #1');
+    });
+
+    it('説明文を表示できる', function() {
+      expect(view.find('[data-name="description"]').text()).toEqual('What is truth?');
+    });
+
+    it('問題のコードを表示できる', function() {
+      expect(view.find('[data-name="code"]').text()).toEqual('function problem() { return __; }');
     });
   });
 });
