@@ -15,6 +15,19 @@ describe('LearnJS', function() {
     expect(learnjs.problemView).toHaveBeenCalledWith('42');
   });
 
+  it('読み込み完了したらルーターを呼び出す', function() {
+    spyOn(learnjs, 'showView');
+    learnjs.appOnReady();
+    expect(learnjs.showView).toHaveBeenCalledWith(window.location.hash);
+  });
+
+  it('ハッシュの変化に反応する', function() {
+    learnjs.appOnReady();
+    spyOn(learnjs, 'showView');
+    $(window).trigger('hashchange');
+    expect(learnjs.showView).toHaveBeenCalledWith(window.location.hash);
+  });
+
   describe('problem view', function() {
     it('問題番号を含んだタイトルがある', function() {
       var view = learnjs.problemView('1');
